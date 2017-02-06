@@ -23,6 +23,6 @@ RUN set -ex \
   && rm -rf linux-amd64 helm.tar.gz \
   && helm version --client
 
-ADD ./kube-config-generator.sh /usr/local/bin/
+ADD ./kube-config-generator.sh /usr/local/bin/kube-config-generator
 
 CMD ["sh"]
