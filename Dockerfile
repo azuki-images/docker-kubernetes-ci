@@ -19,13 +19,14 @@ RUN set -x && \
   docker-compose --version && \
   kubectl version --client
 
-# Install latest version of helm
+# Install Helm
+ENV HELM_VERSION 2.3.1
+
 RUN set -ex && \
-  curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh && \
-  chmod 700 get_helm.sh && \
-  ./get_helm.sh && \
-  rm -rf get_helm.sh && \
-  helm version --client
+  curl -fSL -o helm.tar.gz https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION}-linux-amd64.tar.gz && \
+  tar -xzvf helm.tar.gz && \
+  mv linux-amd64/helm /usr/local/bin/ && \
+  rm -rf linux-amd64 helm.tar.gz \
 
 ADD ./kube-config-generator.sh /usr/local/bin/kube-config-generator
 
