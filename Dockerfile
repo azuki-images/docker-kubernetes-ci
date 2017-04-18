@@ -1,6 +1,11 @@
-FROM docker:1.13
+FROM docker:17.04
 
 # Install dependecies
+# - bash
+# - python pip
+# - awscli
+# - kubernetes (with kubectl)
+# - docker-compose
 RUN set -x \
   && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
   && apk add --no-cache \

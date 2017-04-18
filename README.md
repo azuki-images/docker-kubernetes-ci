@@ -16,7 +16,8 @@ Versions (tags)
 ---
 
 <versions>
-- [`latest`, `1.13`](https://github.com/azuki-images/docker-kubernetes-ci/blob/master/Dockerfile)
+- [latest, 17.04](https://github.com/azuki-images/docker-kubernetes-ci/blob/master/Dockerfile)
+- [1.13](https://github.com/azuki-images/docker-kubernetes-ci/blob/v1.13/Dockerfile)
 </versions>
 
 ## License
