@@ -26,7 +26,7 @@ RUN set -ex && \
   curl -fSL -o helm.tar.gz https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION}-linux-amd64.tar.gz && \
   tar -xzvf helm.tar.gz && \
   mv linux-amd64/helm /usr/local/bin/ && \
-  rm -rf linux-amd64 helm.tar.gz \
+  rm -rf linux-amd64 helm.tar.gz
 
 ADD ./kube-config-generator.sh /usr/local/bin/kube-config-generator
 
