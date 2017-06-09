@@ -22,17 +22,13 @@ function valid_required_envs() {
 	fi
 }
 
-function full_path() {
-	echo "$( cd "$( dirname "$1" )" && pwd )"
-}
-
 valid_required_envs
 
 KUBE_CLUSTER=${KUBE_CLUSTER:-$KUBE_CONTEXT}
 KUBE_USER=${KUBE_USER:-$KUBE_CONTEXT}
 
 KUBECONFIG=${KUBECONFIG:-$HOME/.kube/config}
-KUBE_CONFIG_DIR=$(full_path "${KUBECONFIG}")
+KUBE_CONFIG_DIR=$(dirname "${KUBECONFIG}")
 
 mkdir -p "${KUBE_CONFIG_DIR}"
 
