@@ -20,7 +20,7 @@ RUN set -x && \
   kubectl version --client
 
 # Install Helm
-ENV HELM_VERSION 2.3.1
+ENV HELM_VERSION 2.4.2
 
 RUN set -ex && \
   curl -fSL -o helm.tar.gz https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION}-linux-amd64.tar.gz && \
